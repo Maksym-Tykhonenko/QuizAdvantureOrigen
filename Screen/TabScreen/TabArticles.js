@@ -72,7 +72,7 @@ const TabArticles = ({navigation}) => {
       source={require('../../assets/bg/bg.png')}
       style={styles.container}>
       <LinearGradient
-        colors={['rgba(12, 45, 72, 0.45)', 'rgba(20, 93, 160, 0.6)']}
+        colors={['rgba(251, 251, 251, 0.05)', 'rgba(254, 254, 254, 0.08)']}
         style={styles.container}>
         <SafeAreaView style={styles.container}>
           <ScrollView style={styles.scrollView}>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: 'gold',
     textAlign: 'center',
     marginVertical: 20,
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   lockedCardWrapper: {
     opacity: 0.9,
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   cardsContainer: {
     padding: 16,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

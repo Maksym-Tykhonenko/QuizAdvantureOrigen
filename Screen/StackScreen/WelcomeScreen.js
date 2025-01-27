@@ -28,7 +28,7 @@ const WelcomeScreen = ({navigation}) => {
       source={require('../../assets/bg/bg.png')}
       style={styles.container}>
       <LinearGradient
-        colors={['rgba(12, 45, 72, 0.25)', 'rgba(20, 93, 160, 0.45)']}
+        colors={['rgba(251, 251, 251, 0.05)', 'rgba(254, 254, 254, 0.08)']}
         style={styles.gradientContainer}>
         <View style={styles.contentContainer}>
           <Animated.View
@@ -60,10 +60,10 @@ const styles = StyleSheet.create({
     width: '90%',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'rgba(12, 45, 72, 0.75)',
+    backgroundColor: 'rgba(15, 15, 14, 0.75)',
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   titleContainer: {
     alignItems: 'center',
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontSize: 42,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: 'gold',
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: 2, height: 2},
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 28,
-    color: '#B4E0FF',
+    color: 'gold',
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: 1, height: 1},

@@ -36,7 +36,13 @@ const TabStatiscticScreen = () => {
         gamesPlayed: acc.gamesPlayed + 1,
         totalScore: acc.totalScore + (stat.score || 0),
       }),
-      {totalCorrect: 0, totalPercentage: 0, totalTime: 0, gamesPlayed: 0, totalScore: 0},
+      {
+        totalCorrect: 0,
+        totalPercentage: 0,
+        totalTime: 0,
+        gamesPlayed: 0,
+        totalScore: 0,
+      },
     );
 
     return {
@@ -62,7 +68,14 @@ const TabStatiscticScreen = () => {
     );
     const highestScore = Math.max(...regionStats.map(s => s.score || 0));
 
-    return {bestScore, bestPercentage, bestTime, attempts, lastPlayed, highestScore};
+    return {
+      bestScore,
+      bestPercentage,
+      bestTime,
+      attempts,
+      lastPlayed,
+      highestScore,
+    };
   };
 
   const {totalCorrect, avgPercentage, totalTime, gamesPlayed, totalScore} =
@@ -73,15 +86,13 @@ const TabStatiscticScreen = () => {
       source={require('../../assets/bg/bg.png')}
       style={styles.container}>
       <LinearGradient
-        colors={['rgba(12, 45, 72, 0.55)', 'rgba(20, 93, 160, 0.8)']}
+        colors={['rgba(251, 251, 251, 0.05)', 'rgba(254, 254, 254, 0.08)']}
         style={styles.container}>
         <SafeAreaView style={styles.container}>
           <ScrollView style={styles.scrollView}>
             {/* Overall Statistics */}
             <View style={styles.section}>
-              <LinearGradient
-                colors={['#2E8BC0', '#1A5F7A']}
-                style={styles.card}>
+              <LinearGradient colors={['#000', '#000']} style={styles.card}>
                 <Text style={styles.sectionTitle}>Overall Statistics</Text>
                 <View style={styles.statsRow}>
                   <View style={styles.statItem}>
@@ -144,7 +155,9 @@ const TabStatiscticScreen = () => {
                         <Text style={styles.statLabel}>Best Time</Text>
                       </View>
                       <View style={styles.statItem}>
-                        <Text style={styles.statValue}>{stats.highestScore}</Text>
+                        <Text style={styles.statValue}>
+                          {stats.highestScore}
+                        </Text>
                         <Text style={styles.statLabel}>Highest Score</Text>
                       </View>
                     </View>
@@ -179,6 +192,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     marginBottom: 15,
+    marginTop: 15,
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: {width: 1, height: 1},

@@ -50,9 +50,9 @@ const TabNavigation = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: 'rgba(12, 45, 72, 0.95)',
+          backgroundColor: 'rgba(12, 12, 12, 0.95)',
           borderTopWidth: 1,
-          borderTopColor: '#B4E0FF',
+          borderTopColor: 'gold',
           paddingBottom: 5,
           paddingTop: 8,
           height: 110,
@@ -67,7 +67,7 @@ const TabNavigation = () => {
           width: 50,
           height: 50,
         },
-        tabBarActiveTintColor: '#B4E0FF',
+        tabBarActiveTintColor: 'gold',
         tabBarInactiveTintColor: '#6B8CA3',
       }}>
       <Tab.Screen
@@ -78,7 +78,7 @@ const TabNavigation = () => {
           tabBarIcon: ({focused, color}) => (
             <View
               style={{
-                backgroundColor: focused ? '#B4E0FF' : null,
+                backgroundColor: focused ? 'gold' : null,
                 padding: 5,
                 borderRadius: 10,
               }}>
@@ -95,7 +95,7 @@ const TabNavigation = () => {
           tabBarIcon: ({focused, color}) => (
             <View
               style={{
-                backgroundColor: focused ? '#B4E0FF' : null,
+                backgroundColor: focused ? 'gold' : null,
                 padding: 5,
                 borderRadius: 10,
               }}>
@@ -113,7 +113,7 @@ const TabNavigation = () => {
           tabBarIcon: ({focused, color}) => (
             <View
               style={{
-                backgroundColor: focused ? '#B4E0FF' : null,
+                backgroundColor: focused ? 'gold' : null,
                 padding: 5,
                 borderRadius: 10,
               }}>
@@ -131,7 +131,7 @@ const TabNavigation = () => {
           tabBarIcon: ({focused, color}) => (
             <View
               style={{
-                backgroundColor: focused ? '#B4E0FF' : null,
+                backgroundColor: focused ? 'gold' : null,
                 padding: 5,
                 borderRadius: 10,
               }}>
@@ -149,7 +149,7 @@ const TabNavigation = () => {
           tabBarIcon: ({focused, color}) => (
             <View
               style={{
-                backgroundColor: isPlayMusic ? '#B4E0FF' : null,
+                backgroundColor: isPlayMusic ? 'green' : 'red',
                 padding: 5,
                 borderRadius: 10,
               }}>
@@ -162,7 +162,7 @@ const TabNavigation = () => {
           tabBarLabelStyle: {
             fontSize: 14,
             fontWeight: '500',
-            color: isPlayMusic ? '#B4E0FF' : '#666',
+            color: isPlayMusic ? 'gold' : '#666',
             marginTop: 5,
           },
         }}

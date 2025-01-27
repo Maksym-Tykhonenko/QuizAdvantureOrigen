@@ -135,14 +135,19 @@ const TabProfile = () => {
       source={require('../../assets/bg/bg.png')}
       style={styles.container}>
       <LinearGradient
-        colors={['rgba(12, 45, 72, 0.45)', 'rgba(20, 93, 160, 0.6)']}
+        colors={['rgba(251, 251, 251, 0.05)', 'rgba(254, 254, 254, 0.08)']}
         style={styles.container}>
         <SafeAreaView style={styles.container}>
           <ScrollView style={styles.scrollView}>
             <View style={styles.profileContainer}>
-              <TouchableOpacity onPress={selectImage} style={styles.imageContainer}>
+              <TouchableOpacity
+                onPress={selectImage}
+                style={styles.imageContainer}>
                 {tempImage ? (
-                  <Image source={{uri: tempImage}} style={styles.profileImage} />
+                  <Image
+                    source={{uri: tempImage}}
+                    style={styles.profileImage}
+                  />
                 ) : (
                   <View style={styles.placeholderImage}>
                     <Text style={styles.placeholderText}>Add Photo</Text>
@@ -245,20 +250,20 @@ const styles = StyleSheet.create({
     height: 250,
     borderRadius: 75,
     borderWidth: 3,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   placeholderImage: {
     width: 250,
     height: 250,
     borderRadius: 75,
-    backgroundColor: 'rgba(180, 224, 255, 0.3)',
+    backgroundColor: 'rgba(233, 238, 220, 0.3)',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   placeholderText: {
-    color: '#FFFFFF',
+    color: 'gold',
     fontSize: 16,
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: {width: 1, height: 1},
@@ -270,13 +275,13 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '80%',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: 'rgba(233, 238, 220, 0.3)',
     borderRadius: 10,
     padding: 15,
     marginBottom: 20,
-    color: '#FFFFFF',
+    color: 'gold',
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   infoContainer: {
     alignItems: 'center',
@@ -284,7 +289,7 @@ const styles = StyleSheet.create({
   nameText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: 'gold',
     marginBottom: 10,
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: {width: 1, height: 1},
@@ -292,7 +297,7 @@ const styles = StyleSheet.create({
   },
   dateText: {
     fontSize: 16,
-    color: '#B4E0FF',
+    color: 'gold',
     marginBottom: 20,
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
     textShadowOffset: {width: 1, height: 1},
@@ -313,12 +318,12 @@ const styles = StyleSheet.create({
   editButton: {
     backgroundColor: 'rgba(20, 93, 160, 0.6)',
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   saveButton: {
-    backgroundColor: 'rgba(76, 175, 80, 0.6)',
+    backgroundColor: 'rgba(15, 15, 15, 0.6)',
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   cancelButton: {
     backgroundColor: 'rgba(244, 67, 54, 0.6)',
@@ -328,10 +333,10 @@ const styles = StyleSheet.create({
   deleteButton: {
     backgroundColor: 'rgba(244, 67, 54, 0.6)',
     borderWidth: 1,
-    borderColor: '#B4E0FF',
+    borderColor: 'gold',
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: 'gold',
     fontSize: 16,
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
