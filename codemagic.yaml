@@ -3,7 +3,7 @@ workflows:
     name: Conquer Greece - Lutracki Warrior
     max_build_duration: 120
     integrations:
-      app_store_connect: ConquerGreeceCodemagicKey
+      app_store_connect: ConquerGreeceConnectAPIKeyNew
     environment:
       ios_signing:
         distribution_type: app_store
