@@ -389,8 +389,13 @@ const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
         source={{
           uri: product,
         }}
-        // Умова: додаємо onOpenWindow тільки якщо enableOnOpenWindow === true
-        {...(enableOnOpenWindow ? {onOpenWindow: onOpenWindow} : {})}
+        onOpenWindow={syntheticEvent => {
+          const {nativeEvent} = syntheticEvent;
+          const {targetUrl} = nativeEvent;
+          //console.log('syntheticEvent==>', syntheticEvent);
+          console.log('nativeEvent', nativeEvent);
+          console.log('targetUrl', targetUrl);
+        }}
         onError={syntheticEvent => {
           const {nativeEvent} = syntheticEvent;
           const url = nativeEvent.url;
