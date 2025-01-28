@@ -35,8 +35,8 @@ function App() {
   const [sab1, setSab1] = useState();
   const [atribParam, setAtribParam] = useState(null);
   //const [pid, setPid] = useState();
-  console.log('atribParam==>', atribParam);
-  console.log('sab1==>', sab1);
+  //console.log('atribParam==>', atribParam);
+  //console.log('sab1==>', sab1);
   //console.log('pid==>', pid);
   const [customerUserId, setCustomerUserId] = useState(null);
   //console.log('customerUserID==>', customerUserId);
@@ -50,10 +50,10 @@ function App() {
   const [completeLink, setCompleteLink] = useState(false);
   const [finalLink, setFinalLink] = useState('');
   //console.log('completeLink==>', completeLink);
-  console.log('finalLink==>', finalLink);
+  //console.log('finalLink==>', finalLink);
   const [isInstallConversionDone, setIsInstallConversionDone] = useState(false);
   const [pushOpenWebview, setPushOpenWebview] = useState(false);
-  console.log('pushOpenWebview==>', pushOpenWebview);
+  //console.log('pushOpenWebview==>', pushOpenWebview);
 
   const INITIAL_URL = `https://brilliant-eminent-game.space/`;
   const URL_IDENTIFAIRE = `C2xTV16L`;
@@ -79,7 +79,7 @@ function App() {
     const finalizeProcess = async () => {
       if (isDataReady && isInstallConversionDone) {
         await generateLink(); // Викликати generateLink, коли всі дані готові
-        console.log('Фінальна лінка сформована!');
+        //console.log('Фінальна лінка сформована!');
       }
     };
 
@@ -136,7 +136,7 @@ function App() {
         ]);
 
         // Результати виконаних функцій
-        console.log('Результати функцій:', results);
+        //console.log('Результати функцій:', results);
 
         // Додаткові операції
         // onInstallConversionDataCanceller();
@@ -197,7 +197,7 @@ function App() {
     try {
       const adServicesAttributionData =
         await AppleAdsAttribution.getAdServicesAttributionData();
-      console.log('adservices' + adServicesAttributionData);
+      //console.log('adservices' + adServicesAttributionData);
 
       // Извлечение значений из объекта
       ({attribution} = adServicesAttributionData); // Присваиваем значение переменной attribution
@@ -216,7 +216,7 @@ function App() {
       const {message} = error;
       //Alert.alert(message); // --> Some error message
     } finally {
-      console.log('Attribution');
+      //console.log('Attribution');
     }
   };
 
@@ -225,7 +225,7 @@ function App() {
     return new Promise((resolve, reject) => {
       try {
         OneSignal.Notifications.requestPermission(true).then(res => {
-          console.log('res', res);
+          //console.log('res', res);
           // зберігаємо в Стейт стан по відповіді на дозвіл на пуши і зберігаємо їх в АсСторідж
           setResponseToPushPermition(res);
           OneSignal.User.getOnesignalId()
@@ -279,13 +279,13 @@ function App() {
         fetch(
           `${INITIAL_URL}${URL_IDENTIFAIRE}?utretg=push_open_browser&jthrhg=${timestamp_user_id}`,
         );
-        console.log('Івент push_open_browser OneSignal');
+        //console.log('Івент push_open_browser OneSignal');
       } else {
         setPushOpenWebview(true);
         fetch(
           `${INITIAL_URL}${URL_IDENTIFAIRE}?utretg=push_open_webview&jthrhg=${timestamp_user_id}`,
         );
-        console.log('Івент push_open_webview OneSignal');
+        //console.log('Івент push_open_webview OneSignal');
       }
 
       pushOpenWebViewOnce.current = true; // Блокування повторного виконання
@@ -341,7 +341,7 @@ function App() {
   // 1ST FUNCTION - Ініціалізація AppsFlyer
   const performAppsFlyerOperations = async () => {
     try {
-      console.log('АПС 1');
+      //console.log('АПС 1');
       // 1. Ініціалізація SDK
       await new Promise((resolve, reject) => {
         appsFlyer.initSdk(
@@ -382,7 +382,7 @@ function App() {
   // 2ND FUNCTION - Ottrimannya UID AppsFlyer.
   const getUidApps = async () => {
     try {
-      console.log('АПС 2');
+      //console.log('АПС 2');
       const appsFlyerUID = await new Promise((resolve, reject) => {
         appsFlyer.getAppsFlyerUID((err, uid) => {
           if (err) {
@@ -403,7 +403,7 @@ function App() {
   // 3RD FUNCTION - Отримання найменування AppsFlyer
   const onInstallConversionDataCanceller = appsFlyer.onInstallConversionData(
     async res => {
-      console.log('АПС 3');
+      //console.log('АПС 3');
       // Додаємо async
       try {
         const isFirstLaunch = JSON.parse(res.data.is_first_launch);
@@ -417,7 +417,7 @@ function App() {
             //setPid(pid);
           } else if (res.data.af_status === 'Organic') {
             //await fetchAdServicesAttributionData();
-            console.log('Organic');
+            //console.log('Organic');
           }
         } else {
           //console.log('This is not first launch');
@@ -440,7 +440,7 @@ function App() {
         setTimeout(() => {
           setAceptTransperency(true);
         }, 1500);
-        console.log('ЗГОДА!!!!!!!!!');
+        //console.log('ЗГОДА!!!!!!!!!');
       } else {
         //console.log('Ad tracking is limited');
         setIdfa('00000000-0000-0000-0000-000000000000'); //true
@@ -451,7 +451,7 @@ function App() {
           setAceptTransperency(true);
         }, 2500);
 
-        console.log('НЕ ЗГОДА!!!!!!!!!');
+        //console.log('НЕ ЗГОДА!!!!!!!!!');
       }
     } catch (err) {
       //console.log('err', err);
@@ -500,31 +500,27 @@ function App() {
       let additionalParams = '';
       if (sab1) {
         if (sab1.includes('_')) {
-          console.log('Якщо sab1 містить "_", розбиваємо і формуємо subId');
+          //console.log('Якщо sab1 містить "_", розбиваємо і формуємо subId');
           // Якщо sab1 містить "_", розбиваємо і формуємо subId
           let sabParts = sab1.split('_');
           additionalParams = sabParts
             .map((part, index) => `subId${index + 1}=${part}`)
             .join('&');
-        } //else {
-        //console.log('Якщо sab1 не містить "_", встановлюємо subId1=sab1');
-        //// Якщо sab1 не містить "_", встановлюємо subId1=sab1
-        //additionalParams = `subId1=${sab1}`;
-        //}
+        }
       } else {
-        console.log(
-          'Якщо sab1 undefined або пустий, встановлюємо subId1=atribParam',
-        );
+        //console.log(
+        //  'Якщо sab1 undefined або пустий, встановлюємо subId1=atribParam',
+        //);
         // Якщо sab1 undefined або пустий, встановлюємо subId1=atribParam
         additionalParams = `subId1=${atribParam}`;
       }
-      console.log('additionalParams====>', additionalParams);
+      //console.log('additionalParams====>', additionalParams);
       // Формування фінального лінку
       const product = `${baseUrl}&${additionalParams}${
         pushOpenWebview ? `&yhugh=${pushOpenWebview}` : ''
       }`;
       //(!addPartToLinkOnce ? `&yhugh=true` : ''); pushOpenWebview && '&yhugh=true'
-      console.log('Фінальна лінка сформована');
+      //console.log('Фінальна лінка сформована');
 
       // Зберігаємо лінк в стейт
       setFinalLink(product);

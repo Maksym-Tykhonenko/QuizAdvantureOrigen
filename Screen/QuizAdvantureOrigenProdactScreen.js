@@ -15,44 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
   const [product, setProduct] = useState(route.params?.product);
-  ///////////
-  {
-    /**
-  useEffect(() => {
-    getData();
-  }, []);
-
-  useEffect(() => {
-    setData();
-  }, [product]);
-
-  const setData = async () => {
-    try {
-      const data = {
-        product,
-      };
-      const jsonData = JSON.stringify(data);
-      await AsyncStorage.setItem('ProdScr', jsonData);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getData = async () => {
-    try {
-      const jsonData = await AsyncStorage.getItem('ProdScr');
-      if (jsonData !== null) {
-        const parsedData = JSON.parse(jsonData);
-        setProduct(parsedData.product);
-      } else {
-        console.log('Даних немає в AsyncStorage');
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
- */
-  }
+  /////////
   const INITIAL_URL = `https://brilliant-eminent-game.space/`;
   const URL_IDENTIFAIRE = `C2xTV16L`;
 
@@ -108,7 +71,7 @@ const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
         fetch(
           `${INITIAL_URL}${URL_IDENTIFAIRE}?utretg=push_subscribe&jthrhg=${timestamp_user_id}`,
         );
-        console.log('івент push_subscribe !!!');
+        //console.log('івент push_subscribe !!!');
         await AsyncStorage.setItem('pushSubscribeStatus', 'sent');
       }
     };
@@ -167,7 +130,7 @@ const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
   const handleNavigationStateChange = navState => {
     const {url} = navState;
     const {mainDocumentURL} = navState;
-    //console.log('NavigationState: ', navState);
+    console.log('NavigationState: ', navState);
     if (
       url.includes(
         'https://api.paymentiq.io/paymentiq/api/piq-redirect-assistance',
@@ -180,12 +143,13 @@ const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
       url.includes('https://interac.express-connect.com/cpi?transaction=')
     ) {
       setRedirectUrl(product);
-    } else if (url.includes('about:blank') && checkNineUrl === product) {
-      refWebview.current.injectJavaScript(
-        `window.location.href = '${redirectUrl}'`,
-      );
-      console.log('xxxx');
-    } else if (
+    } //else if (url.includes('about:blank') && checkNineUrl === product) {
+    //refWebview.current.injectJavaScript(
+    //  `window.location.href = '${redirectUrl}'`,
+    //);
+    //console.log('xxxx');
+    //}
+    else if (
       url.includes('https://app.corzapay.com/payment/') &&
       checkNineUrl === product
     ) {
@@ -224,7 +188,7 @@ const QuizAdvantureOrigenProdactScreen = ({navigation, route}) => {
 
   const onShouldStartLoadWithRequest = event => {
     const {url} = event;
-    //console.log('onShouldStartLoadWithRequest========> ', event);
+    console.log('onShouldStartLoadWithRequest========> ', event);
 
     if (url.startsWith('mailto:')) {
       Linking.openURL(url);
